@@ -1,0 +1,88 @@
+# ==========================================
+# Python Environment & Caching
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ==========================================
+# Virtual Environments (uv, venv, poetry)
+# ==========================================
+.venv/
+venv/
+ENV/
+env/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# ==========================================
+# Configuration & Sensitive Data (API Keys)
+# ==========================================
+.env
+.env.*
+# Do not ignore the example file so team members know what variables to set
+!.env.example
+
+# ==========================================
+# Project Data & Local DBs
+# ==========================================
+# Ignore all generated data, extracted graphs, and embeddings
+data/chunks/*
+data/embeddings/*
+data/graph/*
+data/processed/*
+data/raw/*
+
+# Allow tracking of .gitkeep files so empty directories remain in the repo structure
+!data/**/.gitkeep
+
+# ==========================================
+# Jupyter Notebooks
+# ==========================================
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# ==========================================
+# IDEs, Editors, and OS Files
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ==========================================
+# Logs & Evaluation Reports
+# ==========================================
+*.log
+evaluation/datasets/*
+evaluation/benchmarks/*
+
+# ==========================================
+# Others
+# ==========================================
+docs/
+
+
+

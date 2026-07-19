@@ -17,6 +17,14 @@ RUN pip install --no-cache-dir .
 # `streamlit run`, so it's copied in last, after the install layer.
 COPY src/frontend ./src/frontend
 
+# prompts/ is not part of any installed package (pip install only
+# bundles src/llm and src/agents per pyproject's wheel config), and
+# PromptManager's own path math breaks once llm/agents are installed
+# into site-packages instead of run from source. PROMPTS_DIR makes
+# the location explicit instead of relying on that math in a container.
+COPY prompts ./prompts
+ENV PROMPTS_DIR=/app/prompts
+
 # Render injects $PORT at runtime and requires the container to bind
 # to it on 0.0.0.0. 8501 below is only a local-dev fallback.
 ENV PORT=8501

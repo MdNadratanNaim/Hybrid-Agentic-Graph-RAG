@@ -23,6 +23,7 @@ COPY src/frontend ./src/frontend
 # into site-packages instead of run from source. PROMPTS_DIR makes
 # the location explicit instead of relying on that math in a container.
 COPY prompts ./prompts
+RUN echo "--- /app/prompts contents ---" && ls -la ./prompts && echo "--- end ---"
 ENV PROMPTS_DIR=/app/prompts
 
 # Render injects $PORT at runtime and requires the container to bind

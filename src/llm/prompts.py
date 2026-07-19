@@ -10,12 +10,14 @@ from pathlib import Path
 from functools import lru_cache
 from string import Template
 from typing import Dict
+import os
 import re
 
 
 # Prompt directory
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-PROMPT_DIR = BASE_DIR / "prompts"
+_env_prompts_dir = os.environ.get("PROMPTS_DIR")
+PROMPT_DIR = Path(_env_prompts_dir) if _env_prompts_dir else BASE_DIR / "prompts"
 
 
 class PromptManager:
